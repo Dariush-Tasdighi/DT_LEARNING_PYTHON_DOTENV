@@ -3,9 +3,9 @@
 # **************************************************
 from openai import OpenAI
 
-api_key = "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"
+OPENAI_API_KEY: str = "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"
 
-client = OpenAI(api_key=api_key)
+client = OpenAI(api_key=OPENAI_API_KEY)
 # **************************************************
 
 
@@ -17,13 +17,13 @@ client = OpenAI(api_key=api_key)
 
 # os.system(command="cls")
 
-# load_dotenv()
+# load_dotenv(override=True)
 
 # password = os.getenv(key="PASSWORD")
 # print("Password:", password)
 
-# api_key = os.getenv(key="OPENAI_API_KEY")
-# print("API Key:", api_key)
+# openai_api_key = os.getenv(key="OPENAI_API_KEY")
+# print("OPENAI API Key:", openai_api_key)
 # **************************************************
 
 
@@ -35,13 +35,13 @@ client = OpenAI(api_key=api_key)
 
 # os.system(command="cls")
 
-# load_dotenv()
+# load_dotenv(override=True)
 
 # password = os.environ.get(key="PASSWORD")
 # print("Password:", password)
 
-# api_key = os.environ.get(key="OPENAI_API_KEY")
-# print("API Key:", api_key)
+# openai_api_key = os.environ.get(key="OPENAI_API_KEY")
+# print("OPENAI API Key:", openai_api_key)
 # **************************************************
 
 
@@ -53,13 +53,16 @@ client = OpenAI(api_key=api_key)
 
 # os.system(command="cls")
 
-# load_dotenv(dotenv_path="./.envTemp")
+# load_dotenv(
+#     override=True,
+#     dotenv_path="./.envTemp",
+# )
 
-# password = os.environ.get(key="PASSWORD")
+# password = os.getenv(key="PASSWORD")
 # print("Password:", password)
 
-# api_key = os.environ.get(key="OPENAI_API_KEY")
-# print("API Key:", api_key)
+# openai_api_key = os.getenv(key="OPENAI_API_KEY")
+# print("OPENAI API Key:", openai_api_key)
 # **************************************************
 
 
@@ -69,20 +72,20 @@ client = OpenAI(api_key=api_key)
 # import os
 # from dotenv import load_dotenv
 
+# # KEY_NAME_OPENAI_API_KEY: str = "GOOGOOLI"
+# KEY_NAME_OPENAI_API_KEY: str = "OPENAI_API_KEY"
+
 # os.system(command="cls")
 
-# load_dotenv()
+# load_dotenv(override=True)
 
-# # KEY_NAME_API_KEY: str = "GOOGOOLI"
-# KEY_NAME_API_KEY: str = "OPENAI_API_KEY"
-
-# api_key: str | None = os.getenv(key=KEY_NAME_API_KEY)
+# api_key: str | None = os.getenv(key=KEY_NAME_OPENAI_API_KEY)
 
 # if api_key is None:
-#     print("[-] API Key not found!")
+#     print(f"[-] API Key '{KEY_NAME_OPENAI_API_KEY}' not found!")
 #     exit()
 
-# print("API Key:", api_key)
+# print("OPENAI API Key:", api_key)
 # **************************************************
 
 
@@ -92,19 +95,20 @@ client = OpenAI(api_key=api_key)
 # import os
 # from dotenv import load_dotenv
 
-# KEY_NAME_API_KEY: str = "OPENAI_API_KEY"
+# KEY_NAME_OPENAI_API_KEY: str = "OPENAI_API_KEY"
 
 
-# def get_api_key() -> str:
+# def get_api_key(key: str) -> str:
 #     """
-#     Get API Key Function
+#     Get API key.
 #     """
 
-#     load_dotenv()
+#     load_dotenv(override=True)
 
-#     api_key: str | None = os.getenv(key=KEY_NAME_API_KEY)
+#     api_key: str | None = os.getenv(key=key)
+
 #     if not api_key:
-#         print("API Key not found!")
+#         print(f"[-] API Key '{key}' not found!")
 #         exit()
 
 #     return api_key
@@ -112,9 +116,9 @@ client = OpenAI(api_key=api_key)
 
 # os.system(command="cls")
 
-# api_key: str = get_api_key()
+# api_key: str = get_api_key(key=KEY_NAME_OPENAI_API_KEY)
 
-# print("API Key:", api_key)
+# print("OPENAI API Key:", api_key)
 # **************************************************
 
 
@@ -149,19 +153,20 @@ client = OpenAI(api_key=api_key)
 # import os
 # from dotenv import load_dotenv
 
-# KEY_NAME_API_KEY: str = "OPENAI_API_KEY"
+# KEY_NAME_OPENAI_API_KEY: str = "OPENAI_API_KEY"
 
 
-# def get_api_key() -> str:
+# def get_api_key(key: str) -> str:
 #     """
-#     Get API Key Function
+#     Get API key.
 #     """
 
-#     load_dotenv()
+#     load_dotenv(override=True)
 
-#     api_key: str | None = os.getenv(key=KEY_NAME_API_KEY)
+#     api_key: str | None = os.getenv(key=key)
+
 #     if not api_key:
-#         print("API Key not found!")
+#         print(f"[-] API Key '{key}' not found!")
 #         exit()
 
 #     return api_key
@@ -174,9 +179,9 @@ client = OpenAI(api_key=api_key)
 
 #     os.system(command="cls")
 
-#     api_key: str = get_api_key()
+#     api_key: str = get_api_key(key=KEY_NAME_OPENAI_API_KEY)
 
-#     print("API Key:", api_key)
+#     print("OPENAI API Key:", api_key)
 
 
 # if __name__ == "__main__":
@@ -192,6 +197,7 @@ client = OpenAI(api_key=api_key)
 # """
 
 # import os
+# import app_constants as constants
 # import app_functions as functions
 
 
@@ -202,9 +208,12 @@ client = OpenAI(api_key=api_key)
 
 #     os.system(command="cls")
 
-#     api_key: str = functions.get_api_key()
+#     api_key: str = functions.get_api_key(
+#         key=constants.KEY_NAME_OPENAI_API_KEY,
+#     )
 
 #     print("API Key:", api_key)
+#     print("OPENAI API Key:", api_key)
 
 
 # if __name__ == "__main__":

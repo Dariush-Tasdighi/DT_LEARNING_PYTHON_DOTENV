@@ -9,27 +9,22 @@ from dotenv import load_dotenv
 import app_constants as constants
 
 
-def get_api_key() -> str:
+def get_api_key(key: str) -> str:
     """
-    Get API Key Function
+    Get API key.
     """
 
-    load_dotenv()
+    load_dotenv(override=True)
 
-    # api_key: str | None = os.getenv(key=app_constants.KEY_NAME_API_KEY)
-    # if not api_key:
-    #     print("API Key not found!")
-    #     exit()
+    api_key: str | None = os.getenv(key=key)
 
-    api_key: str | None = os.getenv(key=constants.KEY_NAME_API_KEY)
     if not api_key:
-        print("API Key not found!")
+        print(f"[-] API Key '{key}' not found!")
         exit()
 
     return api_key
 
 
 if __name__ == "__main__":
-    print(
-        "[-] This module is not meant to be run directly. Please run 'python ./app.py"
-    )
+    print("[-] This module is not meant to be run directly.")
+    print("[!] Please run 'python ./app.py' instead.")
