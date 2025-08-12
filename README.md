@@ -1,7 +1,8 @@
 # Learning DOT ENV
 
-- https://pypi.org/project/dotenv-python
-- https://github.com/TsuiJie/dotenv-python
+- Package: 'dotenv-python'
+    - https://pypi.org/project/dotenv-python
+    - https://github.com/TsuiJie/dotenv-python
 
 ### References
 
@@ -39,7 +40,7 @@ python -m pip install -U python-dotenv
 python -m pip list
 ```
 
-Now! We Create / Modify / Delete / Run the Source Codes...
+- Now! We Write / Modify / Delete / Run the Source Codes...
 
 ```bash
 deactivate
