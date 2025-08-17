@@ -121,7 +121,7 @@ client = OpenAI(api_key=OPENAI_API_KEY)
 
 # # NEW
 # if not api_key:
-#     print(f"[-] API Key '{KEY_NAME_OPENAI_API_KEY}' not found or is empty!")
+#     print(f"[-] Key '{KEY_NAME_OPENAI_API_KEY}' not found or is empty!")
 #     exit()
 
 # print(f"OPENAI API Key: {api_key}")
@@ -134,8 +134,8 @@ client = OpenAI(api_key=OPENAI_API_KEY)
 # import os
 # from dotenv import load_dotenv
 
-# KEY_NAME_OPENAI_API_KEY: str = "GOOGOOLI"
-# # KEY_NAME_OPENAI_API_KEY: str = "OPENAI_API_KEY"
+# # KEY_NAME_OPENAI_API_KEY: str = "GOOGOOLI"
+# KEY_NAME_OPENAI_API_KEY: str = "OPENAI_API_KEY"
 
 
 # # NEW

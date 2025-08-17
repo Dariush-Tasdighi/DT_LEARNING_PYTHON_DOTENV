@@ -4,6 +4,8 @@
     - https://pypi.org/project/dotenv-python
     - https://github.com/TsuiJie/dotenv-python
 
+---
+
 ### References
 
 - 
@@ -59,6 +61,10 @@ deactivate
 
 ```bash
 python .\app.py
+```
+
+```bash
+python .\learn.py
 ```
 
 ---
