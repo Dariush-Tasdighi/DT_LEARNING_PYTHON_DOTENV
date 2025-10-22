@@ -41,7 +41,18 @@ client = OpenAI(api_key=OPENAI_API_KEY)
 # from dotenv import load_dotenv
 
 # # NEW
+# # os.system("cls")
+
+# # NEW
 # # os.system(command="cls")
+
+# # NEW
+# # if os.name == "nt":
+# #     os.system(command="cls")
+# # else:
+# #     os.system(command="clear")
+
+# # NEW
 # os.system(command="cls" if os.name == "nt" else "clear")
 
 # # NEW: override=True
@@ -108,6 +119,7 @@ client = OpenAI(api_key=OPENAI_API_KEY)
 
 # # NEW
 # # KEY_NAME_OPENAI_API_KEY: str = "GOOGOOLI"
+# # KEY_NAME_OPENAI_API_KEY: str = "NEW_PASSWORD"
 # KEY_NAME_OPENAI_API_KEY: str = "OPENAI_API_KEY"
 
 # os.system(command="cls" if os.name == "nt" else "clear")
@@ -135,14 +147,13 @@ client = OpenAI(api_key=OPENAI_API_KEY)
 # from dotenv import load_dotenv
 
 # # KEY_NAME_OPENAI_API_KEY: str = "GOOGOOLI"
+# # KEY_NAME_OPENAI_API_KEY: str = "NEW_PASSWORD"
 # KEY_NAME_OPENAI_API_KEY: str = "OPENAI_API_KEY"
 
 
 # # NEW
 # def get_key_value(key: str) -> str:
-#     """
-#     Get key value.
-#     """
+#     """Get key value."""
 
 #     load_dotenv(override=True)
 
@@ -180,9 +191,7 @@ client = OpenAI(api_key=OPENAI_API_KEY)
 
 # **************************************************
 # def main() -> None:
-#     """
-#     Main function.
-#     """
+#     """Main function."""
 
 #     print("Hello, World!")
 
@@ -199,13 +208,12 @@ client = OpenAI(api_key=OPENAI_API_KEY)
 # from dotenv import load_dotenv
 
 # # KEY_NAME_OPENAI_API_KEY: str = "GOOGOOLI"
+# # KEY_NAME_OPENAI_API_KEY: str = "NEW_PASSWORD"
 # KEY_NAME_OPENAI_API_KEY: str = "OPENAI_API_KEY"
 
 
 # def get_key_value(key: str) -> str:
-#     """
-#     Get key value.
-#     """
+#     """Get key value."""
 
 #     load_dotenv(override=True)
 
@@ -220,9 +228,7 @@ client = OpenAI(api_key=OPENAI_API_KEY)
 
 # # NEW
 # def main() -> None:
-#     """
-#     Main function.
-#     """
+#     """Main function."""
 
 #     os.system(command="cls" if os.name == "nt" else "clear")
 

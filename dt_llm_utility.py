@@ -1,5 +1,5 @@
 """
-Dariush Tasdighi LLM utility module.
+Dariush Tasdighi LLM utility module. Version 2.2
 """
 
 import os
@@ -7,9 +7,7 @@ from dotenv import load_dotenv
 
 
 def get_key_value(key: str) -> str:
-    """
-    Get key value.
-    """
+    """Get key value function."""
 
     load_dotenv(override=True)
 
@@ -23,4 +21,4 @@ def get_key_value(key: str) -> str:
 
 
 if __name__ == "__main__":
-    print("[-] This module is not meant to be run directly!")
+    print("[-] This module is not meant to be run directly!\n")

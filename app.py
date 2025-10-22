@@ -10,9 +10,7 @@ import app_constants as constants
 
 
 def main() -> None:
-    """
-    Main function.
-    """
+    """Main function."""
 
     os.system(command="cls" if os.name == "nt" else "clear")
 
