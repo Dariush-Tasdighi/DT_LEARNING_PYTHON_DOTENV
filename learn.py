@@ -191,7 +191,7 @@ client = OpenAI(api_key=OPENAI_API_KEY)
 
 # **************************************************
 # def main() -> None:
-#     """Main function."""
+#     """Main of program."""
 
 #     print("Hello, World!")
 
@@ -228,7 +228,7 @@ client = OpenAI(api_key=OPENAI_API_KEY)
 
 # # NEW
 # def main() -> None:
-#     """Main function."""
+#     """Main of program."""
 
 #     os.system(command="cls" if os.name == "nt" else "clear")
 
@@ -240,6 +240,38 @@ client = OpenAI(api_key=OPENAI_API_KEY)
 
 
 # # NEW
+# if __name__ == "__main__":
+#     main()
+# **************************************************
+
+
+# **************************************************
+# Best Practice (4)
+# **************************************************
+# """
+# Sample code for using 'dotenv' package.
+# """
+
+# import os
+
+# # NEW
+# import dt_dotenv as utility
+# import app_constants as constants
+
+
+# def main() -> None:
+#     """Main of program."""
+
+#     os.system(command="cls" if os.name == "nt" else "clear")
+
+#     # NEW
+#     api_key: str = utility.get_key_value(
+#         key=constants.KEY_NAME_OPENAI_API_KEY,
+#     )
+
+#     print(f"OPENAI API Key: {api_key}")
+
+
 # if __name__ == "__main__":
 #     main()
 # **************************************************

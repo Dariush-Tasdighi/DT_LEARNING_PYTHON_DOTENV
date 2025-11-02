@@ -3,10 +3,10 @@ Sample code for using 'dotenv' package.
 """
 
 import os
-
-# NEW
-import dt_llm_utility as utility
+import logging
 import app_constants as constants
+from dtx_dotenv import get_key_value
+from dt_logging import setup_logging
 
 
 def main() -> None:
@@ -14,8 +14,7 @@ def main() -> None:
 
     os.system(command="cls" if os.name == "nt" else "clear")
 
-    # NEW
-    api_key: str = utility.get_key_value(
+    api_key: str = get_key_value(
         key=constants.KEY_NAME_OPENAI_API_KEY,
     )
 
@@ -23,4 +22,7 @@ def main() -> None:
 
 
 if __name__ == "__main__":
+    setup_logging(file_path="./app.log")
+    logger = logging.getLogger(name=__name__)
+
     main()

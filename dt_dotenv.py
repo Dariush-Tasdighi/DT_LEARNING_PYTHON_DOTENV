@@ -1,9 +1,11 @@
 """
-Dariush Tasdighi LLM utility module. Version 2.2
+Dariush Tasdighi 'dotenv' utility module.
 """
 
 import os
 from dotenv import load_dotenv
+
+VERSION: str = "1.0"
 
 
 def get_key_value(key: str) -> str:
