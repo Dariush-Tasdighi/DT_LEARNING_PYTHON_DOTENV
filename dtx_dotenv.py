@@ -6,7 +6,7 @@ import os
 import logging
 from dotenv import load_dotenv
 
-VERSION: str = "1.0"
+VERSION: str = "1.1"
 
 logger = logging.getLogger(name=__name__)
 logger.addHandler(hdlr=logging.NullHandler())
@@ -15,7 +15,7 @@ logger.addHandler(hdlr=logging.NullHandler())
 def get_key_value(key: str) -> str:
     """Get key value function."""
 
-    logger.debug(msg="'.env' file loading.")
+    logger.debug(msg="'.env' file is loading...")
 
     load_dotenv(override=True)
 
@@ -27,7 +27,7 @@ def get_key_value(key: str) -> str:
         logger.error(msg=f"Key '{key}' not found or is empty!")
         exit()
 
-    logger.debug(msg="The value is valid.")
+    logger.debug(msg=f"The key '{key}' value is valid.")
 
     return value
 

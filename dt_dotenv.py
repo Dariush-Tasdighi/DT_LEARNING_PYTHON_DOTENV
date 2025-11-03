@@ -5,7 +5,7 @@ Dariush Tasdighi 'dotenv' utility module.
 import os
 from dotenv import load_dotenv
 
-VERSION: str = "1.0"
+VERSION: str = "1.1"
 
 
 def get_key_value(key: str) -> str:

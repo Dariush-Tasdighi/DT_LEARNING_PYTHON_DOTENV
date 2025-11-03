@@ -6,11 +6,11 @@ import os
 import logging
 import app_constants as constants
 from dtx_dotenv import get_key_value
-from dt_logging import setup_logging
+from dtx_logging import setup_logging
 
 
 def main() -> None:
-    """Main function."""
+    """Main of program."""
 
     os.system(command="cls" if os.name == "nt" else "clear")
 
