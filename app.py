@@ -22,7 +22,10 @@ def main() -> None:
 
 
 if __name__ == "__main__":
-    setup_logging(file_path="./app.log")
+    # به عنوان برنامه‌نویس
+    setup_logging(console_level=logging.DEBUG)
+    # زمانی که می‌خواهیم پروژه را به مشتری بدهیم
+    # setup_logging(console_level=logging.INFO)
     logger = logging.getLogger(name=__name__)
 
     main()

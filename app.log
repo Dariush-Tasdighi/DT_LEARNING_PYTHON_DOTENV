@@ -1,2 +1,2 @@
-2025-11-03 19:45:55, 42 [ERROR   ] [dtx_dotenv.py: 27] - Key 'GOOGOOLI' not found or is empty!
-2025-11-03 19:46:42,651 [ERROR   ] [dtx_dotenv.py: 27] - Key 'NEW_PASSWORD' not found or is empty!
+2025-11-07 17:31:21,366 [ERROR   ] [dtx_dotenv.py: 27] - Key 'GOOGOOLI' not found or is empty!
+2025-11-07 17:31:58,904 [ERROR   ] [dtx_dotenv.py: 27] - Key 'NEW_PASSWORD' not found or is empty!
