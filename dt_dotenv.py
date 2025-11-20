@@ -5,11 +5,11 @@ Dariush Tasdighi 'dotenv' utility module.
 import os
 from dotenv import load_dotenv
 
-VERSION: str = "1.1"
+VERSION: str = "1.2"
 
 
 def get_key_value(key: str) -> str:
-    """Get key value function."""
+    """Get key value."""
 
     load_dotenv(override=True)
 

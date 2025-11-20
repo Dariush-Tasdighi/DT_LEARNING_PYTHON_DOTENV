@@ -1,18 +1,10 @@
 # Learning DOT ENV
 
-- Package: 'dotenv-python'
+- Package 'dotenv-python':
     - https://pypi.org/project/dotenv-python
     - https://github.com/TsuiJie/dotenv-python
 
----
-
-### References
-
-- 
-
----
-
-### Setup Environment
+## Setup Environment
 
 ```bash
 python -m venv .venv
@@ -20,6 +12,10 @@ python -m venv .venv
 
 ```bash
 .\.venv\Scripts\activate
+```
+
+```bash
+python -m pip install -r .\requirements.txt -U
 ```
 
 ```bash
@@ -50,7 +46,7 @@ deactivate
 
 ---
 
-### Create .env File (For Saving Passwords / API Keys / Access Tokens / ...)
+## Create .env File (For Saving Passwords / API Keys / Access Tokens / ...)
 
 - In the root of project, create a file, with the name of '.env', and write key names and their values:
     - OPEN_API_KEY="..."

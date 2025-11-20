@@ -1,11 +1,11 @@
 # **************************************************
 # روش احمقانه
 # **************************************************
-from openai import OpenAI
+# from openai import OpenAI
 
-OPENAI_API_KEY: str = "abcde...12345"
+# OPENAI_API_KEY: str = "abcde...12345"
 
-client = OpenAI(api_key=OPENAI_API_KEY)
+# client = OpenAI(api_key=OPENAI_API_KEY)
 # **************************************************
 
 
@@ -118,9 +118,9 @@ client = OpenAI(api_key=OPENAI_API_KEY)
 # from dotenv import load_dotenv
 
 # # NEW
-# # KEY_NAME_OPENAI_API_KEY: str = "GOOGOOLI"
-# # KEY_NAME_OPENAI_API_KEY: str = "NEW_PASSWORD"
-# KEY_NAME_OPENAI_API_KEY: str = "OPENAI_API_KEY"
+# # KEY_NAME_OPENAI_API_KEY: str = "GOOGOOLI".strip().upper()
+# # KEY_NAME_OPENAI_API_KEY: str = "NEW_PASSWORD".strip().upper()
+# KEY_NAME_OPENAI_API_KEY: str = "OPENAI_API_KEY".strip().upper()
 
 # os.system(command="cls" if os.name == "nt" else "clear")
 
@@ -133,7 +133,7 @@ client = OpenAI(api_key=OPENAI_API_KEY)
 
 # # NEW
 # if not api_key:
-#     print(f"[-] Key '{KEY_NAME_OPENAI_API_KEY}' not found or is empty!")
+#     print(f"[-] Key '{KEY_NAME_OPENAI_API_KEY}' not found or is empty!\n")
 #     exit()
 
 # print(f"OPENAI API Key: {api_key}")
@@ -146,9 +146,9 @@ client = OpenAI(api_key=OPENAI_API_KEY)
 # import os
 # from dotenv import load_dotenv
 
-# # KEY_NAME_OPENAI_API_KEY: str = "GOOGOOLI"
-# # KEY_NAME_OPENAI_API_KEY: str = "NEW_PASSWORD"
-# KEY_NAME_OPENAI_API_KEY: str = "OPENAI_API_KEY"
+# # KEY_NAME_OPENAI_API_KEY: str = "GOOGOOLI".strip().upper()
+# # KEY_NAME_OPENAI_API_KEY: str = "NEW_PASSWORD".strip().upper()
+# KEY_NAME_OPENAI_API_KEY: str = "OPENAI_API_KEY".strip().upper()
 
 
 # # NEW
@@ -160,7 +160,6 @@ client = OpenAI(api_key=OPENAI_API_KEY)
 #     value: str | None = os.getenv(key=key)
 
 #     if not value:
-#         # NEW: \n
 #         print(f"[-] Key '{key}' not found or is empty!\n")
 #         exit()
 
@@ -207,9 +206,9 @@ client = OpenAI(api_key=OPENAI_API_KEY)
 # import os
 # from dotenv import load_dotenv
 
-# # KEY_NAME_OPENAI_API_KEY: str = "GOOGOOLI"
-# # KEY_NAME_OPENAI_API_KEY: str = "NEW_PASSWORD"
-# KEY_NAME_OPENAI_API_KEY: str = "OPENAI_API_KEY"
+# # KEY_NAME_OPENAI_API_KEY: str = "GOOGOOLI".strip().upper()
+# # KEY_NAME_OPENAI_API_KEY: str = "NEW_PASSWORD".strip().upper()
+# KEY_NAME_OPENAI_API_KEY: str = "OPENAI_API_KEY".strip().upper()
 
 
 # def get_key_value(key: str) -> str:
@@ -248,30 +247,30 @@ client = OpenAI(api_key=OPENAI_API_KEY)
 # **************************************************
 # Best Practice (4)
 # **************************************************
-# """
-# Sample code for using 'dotenv' package.
-# """
+"""
+Sample code for using 'dotenv' package.
+"""
 
-# import os
+import os
 
-# # NEW
-# import dt_dotenv as utility
-# import app_constants as constants
-
-
-# def main() -> None:
-#     """Main of program."""
-
-#     os.system(command="cls" if os.name == "nt" else "clear")
-
-#     # NEW
-#     api_key: str = utility.get_key_value(
-#         key=constants.KEY_NAME_OPENAI_API_KEY,
-#     )
-
-#     print(f"OPENAI API Key: {api_key}")
+# NEW
+import app_constants as constants
+from dt_dotenv import get_key_value
 
 
-# if __name__ == "__main__":
-#     main()
+def main() -> None:
+    """Main of program."""
+
+    os.system(command="cls" if os.name == "nt" else "clear")
+
+    # NEW
+    api_key: str = get_key_value(
+        key=constants.KEY_NAME_OPENAI_API_KEY,
+    )
+
+    print(f"OPENAI API Key: {api_key}")
+
+
+if __name__ == "__main__":
+    main()
 # **************************************************
