@@ -1,11 +1,11 @@
 # **************************************************
 # روش احمقانه
 # **************************************************
-# from openai import OpenAI
+from openai import OpenAI
 
-# OPENAI_API_KEY: str = "abcde...12345"
+OPENAI_API_KEY: str = "abcde...12345"
 
-# client = OpenAI(api_key=OPENAI_API_KEY)
+client = OpenAI(api_key=OPENAI_API_KEY)
 # **************************************************
 
 
@@ -247,30 +247,30 @@
 # **************************************************
 # Best Practice (4)
 # **************************************************
-"""
-Sample code for using 'dotenv' package.
-"""
+# """
+# Sample code for using 'dotenv' package.
+# """
 
-import os
+# import os
 
-# NEW
-import app_constants as constants
-from dt_dotenv import get_key_value
-
-
-def main() -> None:
-    """Main of program."""
-
-    os.system(command="cls" if os.name == "nt" else "clear")
-
-    # NEW
-    api_key: str = get_key_value(
-        key=constants.KEY_NAME_OPENAI_API_KEY,
-    )
-
-    print(f"OPENAI API Key: {api_key}")
+# # NEW
+# import app_constants as constants
+# from dt_dotenv import get_key_value
 
 
-if __name__ == "__main__":
-    main()
+# def main() -> None:
+#     """Main of program."""
+
+#     os.system(command="cls" if os.name == "nt" else "clear")
+
+#     # NEW
+#     api_key: str = get_key_value(
+#         key=constants.KEY_NAME_OPENAI_API_KEY,
+#     )
+
+#     print(f"OPENAI API Key: {api_key}")
+
+
+# if __name__ == "__main__":
+#     main()
 # **************************************************

@@ -1,8 +1,8 @@
 # Learning DOT ENV
 
-- Package 'dotenv-python':
-    - https://pypi.org/project/dotenv-python
-    - https://github.com/TsuiJie/dotenv-python
+- 'dotenv-python' package:
+  - [pypi.org](https://pypi.org/project/dotenv-python)
+  - [github.com](https://github.com/TsuiJie/dotenv-python)
 
 ## Setup Environment
 
@@ -49,11 +49,11 @@ deactivate
 ## Create .env File (For Saving Passwords / API Keys / Access Tokens / ...)
 
 - In the root of project, create a file, with the name of '.env', and write key names and their values:
-    - OPEN_API_KEY="..."
+  - OPEN_API_KEY="..."
 
 ---
 
-### Run
+## Run
 
 ```bash
 python .\app.py
