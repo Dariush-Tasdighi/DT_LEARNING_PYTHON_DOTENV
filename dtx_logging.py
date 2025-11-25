@@ -31,14 +31,18 @@ Notes
 """
 
 import logging
+from rich.logging import RichHandler
 
-VERSION: str = "1.3"
+VERSION: str = "1.4"
 FILE_MODE: str = "at"
 FILE_ENCODING: str = "utf-8"
 DATE_FORMAT: str = "%Y-%m-%d %H:%M:%S"
-FORMAT: str = (
+
+FILE_FORMAT: str = (
     "%(asctime)s,%(msecs)3d [%(levelname)-8s] [%(filename)s:%(lineno) 3d] - %(message)s"
 )
+
+CONSOLE_FORMAT: str = "%(asctime)s,%(msecs)3d [%(filename)s:%(lineno) 3d] - %(message)s"
 
 
 def setup_logging(
@@ -60,17 +64,18 @@ def setup_logging(
     for handler in root.handlers:
         root.removeHandler(hdlr=handler)
 
-    formatter = logging.Formatter(
-        fmt=FORMAT,
+    # Console Handler:
+
+    # console_handler = logging.StreamHandler()
+    console_handler = RichHandler(show_time=False)
+
+    console_formatter = logging.Formatter(
+        fmt=CONSOLE_FORMAT,
         datefmt=DATE_FORMAT,
     )
 
-    # Console Handler:
-
-    console_handler = logging.StreamHandler()
-
-    console_handler.setFormatter(fmt=formatter)
     console_handler.setLevel(level=console_level)
+    console_handler.setFormatter(fmt=console_formatter)
 
     root.addHandler(hdlr=console_handler)
 
@@ -82,8 +87,13 @@ def setup_logging(
         encoding=FILE_ENCODING,
     )
 
-    file_handler.setFormatter(fmt=formatter)
+    file_formatter = logging.Formatter(
+        fmt=CONSOLE_FORMAT,
+        datefmt=DATE_FORMAT,
+    )
+
     file_handler.setLevel(level=file_level)
+    file_handler.setFormatter(fmt=file_formatter)
 
     root.addHandler(hdlr=file_handler)
 

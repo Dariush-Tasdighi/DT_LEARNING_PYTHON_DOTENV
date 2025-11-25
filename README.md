@@ -1,5 +1,11 @@
 # Learning DOT ENV
 
+- 'rich' package:
+  - [pypi.org](https://pypi.org/project/rich)
+  - [github.com](https://github.com/Textualize/rich)
+  - Extra:
+    - [Site](https://rich.readthedocs.io/en/latest)
+
 - 'dotenv-python' package:
   - [pypi.org](https://pypi.org/project/dotenv-python)
   - [github.com](https://github.com/TsuiJie/dotenv-python)
@@ -24,6 +30,10 @@ python -m pip list
 
 ```bash
 python -m pip install -U pip
+```
+
+```bash
+python -m pip install -U rich
 ```
 
 ```bash

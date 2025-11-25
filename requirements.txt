@@ -1,3 +1,4 @@
 pip
+rich
 openai
 python-dotenv
