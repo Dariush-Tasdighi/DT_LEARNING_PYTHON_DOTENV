@@ -1,48 +1,26 @@
 """
-Lightweight logging configuration helpers
-
-This module provides a small, dependency-free helper for configuring Python's
-standard logging module with sane defaults for both console and file output.
-It is intended for small scripts, applications, and learning purposes where a
-simple, consistent logging setup is desired without repeating boilerplate in
-multiple modules.
-
-Features
-- Configure a root logger with a console (stream) handler and a file handler.
-- Uses a readable, timestamped formatter with millisecond precision.
-- Keeps the root logger at DEBUG and lets handlers filter messages by level.
-
-Public API
-- setup_logging(console_level=logging.DEBUG,
-                file_level=logging.WARNING,
-                file_path: str = "./app.log") -> None
-    Configure the root logger with a console and file handler.
-
-Usage example
-    import logging
-    from dt_logging import setup_logging
-
-    setup_logging(console_level=logging.INFO, file_level=logging.DEBUG, file_path="./myapp.log")
-
-Notes
-- Call `setup_logging` early in your application's startup (before emitting
-  many log messages) to avoid reconfiguration races.
-- The root logger is set to DEBUG to allow handlers to perform level filtering.
+Dariush Tasdighi 'logging' Package Utility Module
 """
 
 import logging
+import dt_utility
+
+from typing import Final
 from rich.logging import RichHandler
 
-VERSION: str = "1.4"
-FILE_MODE: str = "at"
-FILE_ENCODING: str = "utf-8"
-DATE_FORMAT: str = "%Y-%m-%d %H:%M:%S"
+VERSION: Final[str] = "1.5"
 
-FILE_FORMAT: str = (
-    "%(asctime)s,%(msecs)3d [%(levelname)-8s] [%(filename)s:%(lineno) 3d] - %(message)s"
+FILE_MODE: Final[str] = "at"
+FILE_ENCODING: Final[str] = "utf-8"
+DATE_FORMAT: Final[str] = "%Y-%m-%d %H:%M:%S"
+
+CONSOLE_FORMAT: Final[str] = (
+    "%(asctime)s,%(msecs)3d [%(filename)s:%(lineno) 3d] - %(message)s"
 )
 
-CONSOLE_FORMAT: str = "%(asctime)s,%(msecs)3d [%(filename)s:%(lineno) 3d] - %(message)s"
+FILE_FORMAT: Final[str] = (
+    "[%(levelname)-8s] %(asctime)s,%(msecs)3d [%(filename)s:%(lineno) 3d] - %(message)s"
+)
 
 
 def setup_logging(
@@ -50,7 +28,9 @@ def setup_logging(
     file_level=logging.WARNING,
     file_path: str = "./app.log",
 ) -> None:
-    """Setup logging"""
+    """
+    Setup logging
+    """
 
     root = logging.getLogger()
 
@@ -88,7 +68,7 @@ def setup_logging(
     )
 
     file_formatter = logging.Formatter(
-        fmt=CONSOLE_FORMAT,
+        fmt=FILE_FORMAT,
         datefmt=DATE_FORMAT,
     )
 
@@ -99,4 +79,6 @@ def setup_logging(
 
 
 if __name__ == "__main__":
-    print("[-] This module is not meant to be run directly!\n")
+    dt_utility.display_just_one_error_message(
+        error_message=dt_utility.ERROR_MESSAGE_MODULE_IS_NOT_EXECUTED_DIRECTLY,
+    )

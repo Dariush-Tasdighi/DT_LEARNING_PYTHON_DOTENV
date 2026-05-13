@@ -1,14 +1,23 @@
-# Learning DOT ENV
+# Learning 'dotenv' Package
 
-- 'rich' package:
-  - [pypi.org](https://pypi.org/project/rich)
-  - [github.com](https://github.com/Textualize/rich)
-  - Extra:
-    - [Site](https://rich.readthedocs.io/en/latest)
+## Packages
 
-- 'dotenv-python' package:
-  - [pypi.org](https://pypi.org/project/dotenv-python)
-  - [github.com](https://github.com/TsuiJie/dotenv-python)
+### 'openai' package
+
+- <https://pypi.org/project/openai>
+- <https://github.com/openai/openai-python>
+
+### 'rich' package
+
+- <https://pypi.org/project/rich>
+- <https://github.com/Textualize/rich>
+- More:
+  - <https://rich.readthedocs.io/en/latest>
+
+### 'dotenv-python' package
+
+- <https://pypi.org/project/dotenv-python>
+- <https://github.com/TsuiJie/dotenv-python>
 
 ## Setup Environment
 
@@ -54,14 +63,10 @@ python -m pip list
 deactivate
 ```
 
----
-
 ## Create .env File (For Saving Passwords / API Keys / Access Tokens / ...)
 
 - In the root of project, create a file, with the name of '.env', and write key names and their values:
-  - OPEN_API_KEY="..."
-
----
+  - OPEN_API_KEY=...
 
 ## Run
 

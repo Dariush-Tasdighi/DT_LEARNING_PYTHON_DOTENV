@@ -1,11 +1,16 @@
 """
-Application constants module.
+Application Constants Module
 """
 
-# KEY_NAME_OPENAI_API_KEY: str = "GOOGOOLI".strip().upper()
-# KEY_NAME_OPENAI_API_KEY: str = "NEW_PASSWORD".strip().upper()
-KEY_NAME_OPENAI_API_KEY: str = "OPENAI_API_KEY".strip().upper()
+import dt_utility
+from typing import Final
+
+KEY_NAME_OPENAI_API_KEY: Final[str] = "GOOGOOLI".replace(" ", "").upper()
+# KEY_NAME_OPENAI_API_KEY: Final[str] = "NEW_PASSWORD".replace(" ", "").upper()
+# KEY_NAME_OPENAI_API_KEY: Final[str] = "OPENAI_API_KEY".replace(" ", "").upper()
 
 
 if __name__ == "__main__":
-    print("[-] This module is not meant to be run directly!\n")
+    dt_utility.display_just_one_error_message(
+        error_message=dt_utility.ERROR_MESSAGE_MODULE_IS_NOT_EXECUTED_DIRECTLY,
+    )

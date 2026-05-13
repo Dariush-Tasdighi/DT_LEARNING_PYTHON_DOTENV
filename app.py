@@ -2,17 +2,27 @@
 Sample code for using 'dotenv' package.
 """
 
-import os
-import logging
 import app_constants as constants
-from dtx_dotenv import get_key_value
+
+from rich import print
+from dt_utility import clear_screen
+
+# NEW
+import logging
 from dtx_logging import setup_logging
+
+# NEW
+# from dt_dotenv import get_key_value
+from dtx_dotenv import get_key_value
 
 
 def main() -> None:
-    """Main of program."""
+    """
+    Main of program.
+    """
 
-    os.system(command="cls" if os.name == "nt" else "clear")
+    clear_screen()
+    print("=" * 50)
 
     api_key: str = get_key_value(
         key=constants.KEY_NAME_OPENAI_API_KEY,
@@ -22,10 +32,23 @@ def main() -> None:
 
 
 if __name__ == "__main__":
-    # به عنوان برنامه‌نویس
-    setup_logging(console_level=logging.DEBUG)
-    # زمانی که می‌خواهیم پروژه را به مشتری بدهیم
-    # setup_logging(console_level=logging.INFO)
-    logger = logging.getLogger(name=__name__)
+    try:
+        # NEW
+        # به عنوان برنامه‌نویس
+        # setup_logging(console_level=logging.DEBUG)
+        # زمانی که می‌خواهیم پروژه را به مشتری بدهیم
+        setup_logging(console_level=logging.INFO)
 
-    main()
+        logger = logging.getLogger(name=__name__)
+
+        main()
+
+    except KeyboardInterrupt:
+        print()
+
+    except Exception as exception:
+        print(f"[red][bold][-][/bold] {exception}![/red]")
+
+    finally:
+        print("=" * 50)
+        print()
