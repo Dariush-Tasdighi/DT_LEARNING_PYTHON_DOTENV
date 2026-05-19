@@ -1,6 +1,6 @@
 # Learning 'dotenv' Package
 
-## Packages
+## Used Packages
 
 ### 'openai' package
 
@@ -11,7 +11,7 @@
 
 - <https://pypi.org/project/rich>
 - <https://github.com/Textualize/rich>
-- More:
+- **More:**
   - <https://rich.readthedocs.io/en/latest>
 
 ### 'dotenv-python' package
@@ -22,11 +22,13 @@
 ## Setup Environment
 
 ```bash
-python -m venv .venv
+# python -m venv .venv
+py -3.14 -m venv .venv.3.14
 ```
 
 ```bash
-.\.venv\Scripts\activate
+# .\.venv\Scripts\activate
+.\.venv.3.14\Scripts\activate
 ```
 
 ```bash

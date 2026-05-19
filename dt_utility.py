@@ -8,6 +8,7 @@ import subprocess
 from rich import print
 from typing import Final
 
+VERSION: Final[str] = "1.1"
 ERROR_MESSAGE_MODULE_IS_NOT_EXECUTED_DIRECTLY: Final[str] = (
     "This module is designed to be imported, not executed directly!"
 )
@@ -21,7 +22,7 @@ def clear_screen() -> None:
     subprocess.run(
         check=True,
         shell=True,
-        args=["cls"] if os.name == "nt" else ["clear"],
+        args="cls" if os.name == "nt" else "clear",
     )
 
 

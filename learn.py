@@ -53,6 +53,18 @@ client = OpenAI(api_key=OPENAI_API_KEY)
 # print("=" * 50)
 # print(f"Version of 'dotenv' package: {version.__version__}")
 # print("=" * 50)
+# **************************************************
+
+
+# **************************************************
+# Display Version (Semi Best Practice)
+# **************************************************
+# from dotenv import version
+
+# print()
+# print("=" * 50)
+# print(f"Version of 'dotenv' package: {version.__version__}")
+# print("=" * 50)
 # print()
 # **************************************************
 
@@ -63,6 +75,7 @@ client = OpenAI(api_key=OPENAI_API_KEY)
 # from rich import print
 # from dotenv import version
 
+# print()
 # print("=" * 50)
 # print(f"Version of 'dotenv' package: {version.__version__}")
 # print("=" * 50)
@@ -72,6 +85,8 @@ client = OpenAI(api_key=OPENAI_API_KEY)
 
 # **************************************************
 # Display Version (Bad Practice)
+#
+# Check 'DT_Learning_Python_Advance' repository for more details!
 # **************************************************
 # import os
 # from rich import print
@@ -98,7 +113,7 @@ client = OpenAI(api_key=OPENAI_API_KEY)
 # subprocess.run(
 #     check=True,
 #     shell=True,
-#     args=["cls"] if os.name == "nt" else ["clear"],
+#     args="cls" if os.name == "nt" else "clear",
 # )
 
 # print("=" * 50)
@@ -140,9 +155,11 @@ client = OpenAI(api_key=OPENAI_API_KEY)
 # print()
 # **************************************************
 
+
 # **************************************************
 # With 'python-dotenv' package you can reads key-value pairs from a .env file.
 # **************************************************
+
 
 # **************************************************
 # ‌Step (1)
@@ -294,7 +311,7 @@ client = OpenAI(api_key=OPENAI_API_KEY)
 
 # # NEW
 # KEY_NAME_OPENAI_API_KEY: str = "GOOGOOLI"  # None
-# # KEY_NAME_OPENAI_API_KEY: str = "NEW_PASSWORD"  # Empty = Null String
+# # KEY_NAME_OPENAI_API_KEY: str = "NEW_PASSWORD"  # Empty = "" = Null String
 
 # # NEW: Final
 # # KEY_NAME_OPENAI_API_KEY: Final[str] = "OPENAI_API_KEY"
@@ -309,7 +326,8 @@ client = OpenAI(api_key=OPENAI_API_KEY)
 # # NEW: key=KEY_NAME_OPENAI_API_KEY
 # api_key: Optional[str] = os.getenv(key=KEY_NAME_OPENAI_API_KEY)
 
-# # NEW: Simple! not api_key -> Means -> api_key is not None and is not Empty!
+# # NEW: Simple! not api_key -> Means:
+# # api_key is not None and is not Empty (Null String = "")!
 # if not api_key:
 #     print(f"Error: The key '{KEY_NAME_OPENAI_API_KEY}' not found or is empty!")
 
@@ -343,7 +361,7 @@ client = OpenAI(api_key=OPENAI_API_KEY)
 # from dt_utility import clear_screen
 
 # # NEW: Second -> Constant(s)
-# KEY_NAME_OPENAI_API_KEY: Final[str] = "GOOGOOLI"
+# KEY_NAME_OPENAI_API_KEY: Final[str] = "GOOGOOLI".replace(" ", "").upper()
 # # KEY_NAME_OPENAI_API_KEY: Final[str] = "OPENAI_API_KEY".replace(" ", "").upper()
 
 
@@ -373,7 +391,9 @@ client = OpenAI(api_key=OPENAI_API_KEY)
 # print("=" * 50)
 
 # # NEW
-# api_key: str = get_key_value(key=KEY_NAME_OPENAI_API_KEY)
+# api_key: str = get_key_value(
+#     key=KEY_NAME_OPENAI_API_KEY,
+# )
 
 # print(f"OPENAI API Key: {api_key}")
 # print("=" * 50)
@@ -434,7 +454,7 @@ client = OpenAI(api_key=OPENAI_API_KEY)
 #     full_name: str = input("What is your full name: ")
 #     print(f"Hello, {full_name}!")
 
-#     # print(1 / 0)  # Debug
+#     print(1 / 0)  # Debug
 
 
 # if __name__ == "__main__":
@@ -442,6 +462,7 @@ client = OpenAI(api_key=OPENAI_API_KEY)
 #         main()
 
 #     except KeyboardInterrupt:
+#         # pass
 #         print()
 
 #     except Exception as exception:
