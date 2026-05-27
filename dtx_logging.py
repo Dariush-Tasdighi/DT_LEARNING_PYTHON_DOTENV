@@ -1,5 +1,5 @@
 """
-Dariush Tasdighi 'logging' Package Utility Module
+Dariush Tasdighi 'logging' Package Module
 """
 
 import logging
@@ -8,7 +8,7 @@ import dt_utility
 from typing import Final
 from rich.logging import RichHandler
 
-VERSION: Final[str] = "1.5"
+VERSION: Final[str] = "1.6"
 
 FILE_MODE: Final[str] = "at"
 FILE_ENCODING: Final[str] = "utf-8"

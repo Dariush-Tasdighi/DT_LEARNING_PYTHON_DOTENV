@@ -5,6 +5,9 @@ Application Constants Module
 import dt_utility
 from typing import Final
 
+# This module does not need VERSION constant!
+# VERSION: Final[str] = "1.0"
+
 KEY_NAME_OPENAI_API_KEY: Final[str] = "GOOGOOLI".replace(" ", "").upper()
 # KEY_NAME_OPENAI_API_KEY: Final[str] = "NEW_PASSWORD".replace(" ", "").upper()
 # KEY_NAME_OPENAI_API_KEY: Final[str] = "OPENAI_API_KEY".replace(" ", "").upper()

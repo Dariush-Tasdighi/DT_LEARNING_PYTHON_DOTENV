@@ -5,6 +5,7 @@ Sample code for using 'dotenv' package.
 import app_constants as constants
 
 from rich import print
+from typing import Final
 from dt_utility import clear_screen
 
 # NEW
@@ -14,6 +15,8 @@ from dtx_logging import setup_logging
 # NEW
 # from dt_dotenv import get_key_value
 from dtx_dotenv import get_key_value
+
+VERSION: Final[str] = "1.0"
 
 
 def main() -> None:
@@ -35,9 +38,9 @@ if __name__ == "__main__":
     try:
         # NEW
         # به عنوان برنامه‌نویس
-        # setup_logging(console_level=logging.DEBUG)
+        setup_logging(console_level=logging.DEBUG)
         # زمانی که می‌خواهیم پروژه را به مشتری بدهیم
-        setup_logging(console_level=logging.INFO)
+        # setup_logging(console_level=logging.INFO)
 
         logger = logging.getLogger(name=__name__)
 

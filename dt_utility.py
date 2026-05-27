@@ -8,7 +8,7 @@ import subprocess
 from rich import print
 from typing import Final
 
-VERSION: Final[str] = "1.1"
+VERSION: Final[str] = "1.2"
 ERROR_MESSAGE_MODULE_IS_NOT_EXECUTED_DIRECTLY: Final[str] = (
     "This module is designed to be imported, not executed directly!"
 )
@@ -34,7 +34,6 @@ def display_just_one_error_message(error_message: str) -> None:
     clear_screen()
 
     error_word: str = "[-]"
-
     length: int = len(error_word) + len(error_message) + 1
 
     print("=" * length)

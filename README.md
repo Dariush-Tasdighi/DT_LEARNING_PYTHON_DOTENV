@@ -1,5 +1,16 @@
 # Learning 'dotenv' Package
 
+## This program was developed by
+
+- **Dariush Tasdighi**
+  - Cell Phone Number: (+98)-9121087461
+  - Email Address: <DariushT@GMail.com>
+  - Telegram ID: <https://t.me/Dariush_Tasdighi>
+  - LinkedIn: <https://www.linkedin.com/in/tasdighi>
+  - Telegram Channels
+    - <https://t.me/IranianExperts>
+    - <https://t.me/DT_PYTHON_LEARNING>
+
 ## Used Packages
 
 ### 'openai' package

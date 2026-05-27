@@ -1,5 +1,5 @@
 """
-Dariush Tasdighi 'dotenv' Package Utility Module
+Dariush Tasdighi 'dotenv' Package Module
 """
 
 import os

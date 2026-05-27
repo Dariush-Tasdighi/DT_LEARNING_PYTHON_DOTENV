@@ -517,7 +517,9 @@ client = OpenAI(api_key=OPENAI_API_KEY)
 #     clear_screen()
 #     print("=" * 50)
 
-#     api_key: str = get_key_value(key=KEY_NAME_OPENAI_API_KEY)
+#     api_key: str = get_key_value(
+#         key=KEY_NAME_OPENAI_API_KEY,
+#     )
 
 #     print(f"OPENAI API Key: {api_key}")
 
@@ -546,8 +548,11 @@ client = OpenAI(api_key=OPENAI_API_KEY)
 # import app_constants as constants
 
 # from rich import print
+# from typing import Final
 # from dt_utility import clear_screen
 # from dt_dotenv import get_key_value
+
+# VERSION: Final[str] = "1.0"
 
 
 # def main() -> None:
