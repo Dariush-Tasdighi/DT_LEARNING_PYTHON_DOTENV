@@ -92,8 +92,9 @@ client = OpenAI(api_key=OPENAI_API_KEY)
 # from rich import print
 # from dotenv import version
 
-# os.system(command="cls")
+# os.system("cls")
 
+# # print()
 # print("=" * 50)
 # print(f"Version of 'dotenv' package: {version.__version__}")
 # print("=" * 50)
@@ -281,6 +282,10 @@ client = OpenAI(api_key=OPENAI_API_KEY)
 # load_dotenv(
 #     override=True,
 #     # NEW: لوس بازی
+#     # dotenv_path=".envTemp",
+#     # dotenv_path=".\.envTemp",
+#     # dotenv_path=".\\.envTemp",
+#     # dotenv_path=r".\.envTemp",
 #     dotenv_path="./.envTemp",
 # )
 
@@ -338,6 +343,7 @@ client = OpenAI(api_key=OPENAI_API_KEY)
 #     print("=" * 50)
 #     print()
 
+#     # quit()
 #     # exit()
 #     sys.exit(1)  # 0: Without Error - 1: With Error
 
@@ -361,8 +367,8 @@ client = OpenAI(api_key=OPENAI_API_KEY)
 # from dt_utility import clear_screen
 
 # # NEW: Second -> Constant(s)
-# KEY_NAME_OPENAI_API_KEY: Final[str] = "GOOGOOLI".replace(" ", "").upper()
-# # KEY_NAME_OPENAI_API_KEY: Final[str] = "OPENAI_API_KEY".replace(" ", "").upper()
+# # KEY_NAME_OPENAI_API_KEY: Final[str] = "GOOGOOLI".replace(" ", "").upper()
+# KEY_NAME_OPENAI_API_KEY: Final[str] = "OPENAI_API_KEY".replace(" ", "").upper()
 
 
 # # NEW: Third -> Function(s)
@@ -488,7 +494,7 @@ client = OpenAI(api_key=OPENAI_API_KEY)
 # from dotenv import load_dotenv
 # from dt_utility import clear_screen
 
-# KEY_NAME_OPENAI_API_KEY: Final[str] = "GOOGOOLI"
+# KEY_NAME_OPENAI_API_KEY: Final[str] = "GOOGOOLI".replace(" ", "").upper()
 # # KEY_NAME_OPENAI_API_KEY: Final[str] = "OPENAI_API_KEY".replace(" ", "").upper()
 
 

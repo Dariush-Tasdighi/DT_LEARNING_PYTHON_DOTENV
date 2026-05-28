@@ -16,7 +16,7 @@ ERROR_MESSAGE_MODULE_IS_NOT_EXECUTED_DIRECTLY: Final[str] = (
 
 def clear_screen() -> None:
     """
-    Clear Screen
+    Clear screen
     """
 
     subprocess.run(
@@ -28,12 +28,13 @@ def clear_screen() -> None:
 
 def display_just_one_error_message(error_message: str) -> None:
     """
-    Display Error Message
+    Display just one error message
     """
 
     clear_screen()
 
     error_word: str = "[-]"
+    # error_word: str = "Error:"
     length: int = len(error_word) + len(error_message) + 1
 
     print("=" * length)
