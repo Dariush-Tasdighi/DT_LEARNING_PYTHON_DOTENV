@@ -5,8 +5,11 @@ Sample code for using 'dotenv' package.
 import app_constants as constants
 
 from rich import print
-from typing import Final
-from dt_utility import clear_screen
+from dt_utility import (
+    clear_screen,
+    display_main_divider,
+    display_error_message,
+)
 
 # NEW
 import logging
@@ -16,16 +19,14 @@ from dtx_logging import setup_logging
 # from dt_dotenv import get_key_value
 from dtx_dotenv import get_key_value
 
-VERSION: Final[str] = "1.0"
-
 
 def main() -> None:
     """
-    Main of program.
+    Main function
     """
 
     clear_screen()
-    print("=" * 50)
+    display_main_divider()
 
     api_key: str = get_key_value(
         key=constants.KEY_NAME_OPENAI_API_KEY,
@@ -50,8 +51,8 @@ if __name__ == "__main__":
         print()
 
     except Exception as exception:
-        print(f"[red][bold][-][/bold] {exception}![/red]")
+        display_error_message(message=str(exception))
 
     finally:
-        print("=" * 50)
+        display_main_divider()
         print()

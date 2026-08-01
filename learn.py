@@ -125,14 +125,29 @@ client = OpenAI(api_key=OPENAI_API_KEY)
 
 
 # **************************************************
-# Display Version (Best Practice)
+# Display Version (Semi Best Practice)
 # **************************************************
-# import dt_utility
+# import os
+# import subprocess
 
 # from rich import print
 # from dotenv import version
 
-# dt_utility.clear_screen()
+
+# def clear_screen() -> None:
+#     """
+#     Clear screen
+#     """
+
+#     subprocess.run(
+#         shell=True,
+#         check=True,
+#         capture_output=False,
+#         args="cls" if os.name == "nt" else "clear",
+#     )
+
+
+# clear_screen()
 
 # print("=" * 50)
 # print(f"Version of 'dotenv' package: {version.__version__}")
@@ -144,15 +159,75 @@ client = OpenAI(api_key=OPENAI_API_KEY)
 # **************************************************
 # Display Version (Best Practice)
 # **************************************************
+# # NEW
+# import dt_utility
+
 # from rich import print
 # from dotenv import version
-# from dt_utility import clear_screen
+
+# # NEW
+# dt_utility.clear_screen()
+
+# # NEW
+# # print("=" * 50)
+# dt_utility.display_main_divider()
+
+# print(f"Version of 'dotenv' package: {version.__version__}")
+
+# # NEW
+# # print("=" * 50)
+# dt_utility.display_main_divider()
+
+# print()
+# **************************************************
+
+
+# **************************************************
+# Display Version (Best Practice)
+# **************************************************
+# # NEW
+# # import dt_utility
+# from dt_utility import (
+#     clear_screen,
+#     display_main_divider,
+# )
+
+# from rich import print
+# from dotenv import version
+
+# # NEW
+# clear_screen()
+# # dt_utility.clear_screen()
+
+# # NEW
+# # dt_utility.display_main_divider()
+# display_main_divider()
+
+# print(f"Version of 'dotenv' package: {version.__version__}")
+
+# # NEW
+# # dt_utility.display_main_divider()
+# display_main_divider()
+
+# print()
+# **************************************************
+
+
+# **************************************************
+# Display Version (Best Practice)
+# **************************************************
+# from rich import print
+# from dt_utility import (
+#     clear_screen,
+#     display_main_divider,
+# )
+# from dotenv import version
 
 # clear_screen()
 
-# print("=" * 50)
+# display_main_divider()
 # print(f"Version of 'dotenv' package: {version.__version__}")
-# print("=" * 50)
+# display_main_divider()
 # print()
 # **************************************************
 
@@ -166,12 +241,16 @@ client = OpenAI(api_key=OPENAI_API_KEY)
 # ‌Step (1)
 # **************************************************
 # import os
+
 # from rich import print
+# from dt_utility import (
+#     clear_screen,
+#     display_main_divider,
+# )
 # from dotenv import load_dotenv
-# from dt_utility import clear_screen
 
 # clear_screen()
-# print("=" * 50)
+# display_main_divider()
 
 # # NEW: Very Important!
 # load_dotenv()
@@ -182,7 +261,8 @@ client = OpenAI(api_key=OPENAI_API_KEY)
 
 # openai_api_key = os.environ.get("OPENAI_API_KEY")
 # print(f"OPENAI API Key: {openai_api_key}")
-# print("=" * 50)
+
+# display_main_divider()
 # print()
 # **************************************************
 
@@ -191,26 +271,29 @@ client = OpenAI(api_key=OPENAI_API_KEY)
 # Step (2)
 # **************************************************
 # import os
+
 # from rich import print
+# from dt_utility import (
+#     clear_screen,
+#     display_main_divider,
+# )
 # from dotenv import load_dotenv
-# from dt_utility import clear_screen
 
 # clear_screen()
-# print("=" * 50)
+# display_main_divider()
 
 # # NEW: override=True
 # # با تشکر از آقای مهندس امیر باقری
 # load_dotenv(override=True)
 
-# # NEW: str | None
-# password: str | None = os.environ.get("PASSWORD")
-# # password: str | None = os.environ.get(key="PASSWORD")  # From Python 2 to 3
+# # NEW: str | None AND (key="PASSWORD")
+# password: str | None = os.environ.get(key="PASSWORD")
 # print(f"Password: {password}")
 
 # openai_api_key: str | None = os.environ.get("OPENAI_API_KEY")
-# # openai_api_key: str | None = os.environ.get(key="OPENAI_API_KEY")  # From Python 2 to 3
 # print(f"OPENAI API Key: {openai_api_key}")
-# print("=" * 50)
+
+# display_main_divider()
 # print()
 # **************************************************
 
@@ -219,25 +302,29 @@ client = OpenAI(api_key=OPENAI_API_KEY)
 # Step (3)
 # **************************************************
 # import os
+
 # from rich import print
+# from dt_utility import (
+#     clear_screen,
+#     display_main_divider,
+# )
 # from dotenv import load_dotenv
-# from dt_utility import clear_screen
 
 # # NEW
 # from typing import Optional
 
 # clear_screen()
-# print("=" * 50)
+# display_main_divider()
 
 # load_dotenv(override=True)
 
 # # NEW: str | None -> Optional[str]
-# password: Optional[str] = os.environ.get("PASSWORD")
+# password: Optional[str] = os.environ.get(key="PASSWORD")
 # print(f"Password: {password}")
 
-# openai_api_key: Optional[str] = os.environ.get("OPENAI_API_KEY")
+# openai_api_key: Optional[str] = os.environ.get(key="OPENAI_API_KEY")
 # print(f"OPENAI API Key: {openai_api_key}")
-# print("=" * 50)
+# display_main_divider()
 # print()
 # **************************************************
 
@@ -246,23 +333,28 @@ client = OpenAI(api_key=OPENAI_API_KEY)
 # Step (4)
 # **************************************************
 # import os
+
 # from rich import print
+# from dt_utility import (
+#     clear_screen,
+#     display_main_divider,
+# )
 # from typing import Optional
 # from dotenv import load_dotenv
-# from dt_utility import clear_screen
 
 # clear_screen()
-# print("=" * 50)
+# display_main_divider()
 
 # load_dotenv(override=True)
 
-# # NEW: os.getenv, key=...
+# # NEW: os.environ.get() -> os.getenv()
 # password: Optional[str] = os.getenv(key="PASSWORD")
 # print(f"Password: {password}")
 
 # openai_api_key: Optional[str] = os.getenv(key="OPENAI_API_KEY")
 # print(f"OPENAI API Key: {openai_api_key}")
-# print("=" * 50)
+
+# display_main_divider()
 # print()
 # **************************************************
 
@@ -271,22 +363,32 @@ client = OpenAI(api_key=OPENAI_API_KEY)
 # Step (5)
 # **************************************************
 # import os
+
 # from rich import print
+# from dt_utility import (
+#     clear_screen,
+#     display_main_divider,
+# )
 # from typing import Optional
 # from dotenv import load_dotenv
-# from dt_utility import clear_screen
 
 # clear_screen()
-# print("=" * 50)
+# display_main_divider()
+
+# # NEW: لوس بازی
+# # ********************
+# # dotenv_path_file -> dotenv_file_path
+# # ********************
+# # dotenv_file_path: str = ".envTemp"
+# # dotenv_file_path: str = ".\.envTemp"
+# # dotenv_file_path: str = ".\\.envTemp"
+# # dotenv_file_path: str = r".\.envTemp"
+# dotenv_file_path: str = "./.envTemp"  # Best Practice
 
 # load_dotenv(
 #     override=True,
-#     # NEW: لوس بازی
-#     # dotenv_path=".envTemp",
-#     # dotenv_path=".\.envTemp",
-#     # dotenv_path=".\\.envTemp",
-#     # dotenv_path=r".\.envTemp",
-#     dotenv_path="./.envTemp",
+#     # NEW
+#     dotenv_path=dotenv_file_path,
 # )
 
 # password: Optional[str] = os.getenv(key="PASSWORD")
@@ -294,7 +396,8 @@ client = OpenAI(api_key=OPENAI_API_KEY)
 
 # openai_api_key: Optional[str] = os.getenv(key="OPENAI_API_KEY")
 # print(f"OPENAI API Key: {openai_api_key}")
-# print("=" * 50)
+
+# display_main_divider()
 # print()
 # **************************************************
 
@@ -303,10 +406,14 @@ client = OpenAI(api_key=OPENAI_API_KEY)
 # Step (6)
 # **************************************************
 # import os
+
 # from rich import print
+# from dt_utility import (
+#     clear_screen,
+#     display_main_divider,
+# )
 # from typing import Optional
 # from dotenv import load_dotenv
-# from dt_utility import clear_screen
 
 # # NEW
 # import sys
@@ -320,11 +427,11 @@ client = OpenAI(api_key=OPENAI_API_KEY)
 
 # # NEW: Final
 # # KEY_NAME_OPENAI_API_KEY: Final[str] = "OPENAI_API_KEY"
-# # KEY_NAME_OPENAI_API_KEY: Final[str] = "OPENAI_API_KEY".strip().upper()
-# # KEY_NAME_OPENAI_API_KEY: Final[str] = "OPENAI_API_KEY".replace(" ", "").upper()
+# # KEY_NAME_OPENAI_API_KEY: Final[str] = "   OPENAI_api_KEY  ".strip().upper()
+# # KEY_NAME_OPENAI_API_KEY: Final[str] = "  OPENAI_  api  _KEY  ".replace(" ", "").upper()
 
 # clear_screen()
-# print("=" * 50)
+# display_main_divider()
 
 # load_dotenv(override=True)
 
@@ -340,15 +447,15 @@ client = OpenAI(api_key=OPENAI_API_KEY)
 
 #     # print(f"[red][bold][-][/bold] The key '{KEY_NAME_OPENAI_API_KEY}' not found or is empty![/red]")
 
-#     print("=" * 50)
+#     display_main_divider()
 #     print()
 
-#     # quit()
+#     quit()
 #     # exit()
-#     sys.exit(1)  # 0: Without Error - 1: With Error
+#     # sys.exit(1)  # 0: Without Error - 1: With Error
 
 # print(f"OPENAI API Key: {api_key}")
-# print("=" * 50)
+# display_main_divider()
 # print()
 # **************************************************
 
@@ -360,23 +467,39 @@ client = OpenAI(api_key=OPENAI_API_KEY)
 # import os
 # import sys
 
+# # NEW
+# # from typing import Final, Optional
+
+# # NEW
+# # from typing import Final
+# # from typing import Optional
+
+# # NEW
+# from typing import (
+#     Final,
+#     Optional,
+# )
+
 # from rich import print
-# from typing import Final
-# from typing import Optional
+# from dt_utility import (
+#     clear_screen,
+#     display_main_divider,
+#     # NEW
+#     display_error_message,
+# )
 # from dotenv import load_dotenv
-# from dt_utility import clear_screen
 
 # # NEW: Second -> Constant(s)
-# # KEY_NAME_OPENAI_API_KEY: Final[str] = "GOOGOOLI".replace(" ", "").upper()
-# KEY_NAME_OPENAI_API_KEY: Final[str] = "OPENAI_API_KEY".replace(" ", "").upper()
+# KEY_NAME_OPENAI_API_KEY: Final[str] = "GOOGOOLI".replace(" ", "").upper()
+# # KEY_NAME_OPENAI_API_KEY: Final[str] = "OPENAI_API_KEY".replace(" ", "").upper()
 
 
 # # NEW: Third -> Function(s)
-# # NEW: Define 'get_key_value' function
+# # NEW: Define 'get_key_value()' function
 # def get_key_value(key: str) -> str:
 #     """
-#     Get key value.
-#     Note: This is DocString! and must be better! 'google' Style!
+#     Get key value
+#     Note: This is 'DocString' and it is better to use 'google' style!
 #     """
 
 #     load_dotenv(override=True)
@@ -384,9 +507,9 @@ client = OpenAI(api_key=OPENAI_API_KEY)
 #     value: Optional[str] = os.getenv(key=key)
 
 #     if not value:
-#         error_message: str = f"The key '{key}' not found or is empty!"
-#         print(f"[red][bold][-][/bold] {error_message}[/red]")
-#         print("=" * 50)
+#         message: str = f"The key '{key}' not found or is empty!"
+#         display_error_message(message=message)
+#         display_main_divider()
 #         print()
 #         sys.exit(1)
 
@@ -394,7 +517,7 @@ client = OpenAI(api_key=OPENAI_API_KEY)
 
 
 # clear_screen()
-# print("=" * 50)
+# display_main_divider()
 
 # # NEW
 # api_key: str = get_key_value(
@@ -402,7 +525,8 @@ client = OpenAI(api_key=OPENAI_API_KEY)
 # )
 
 # print(f"OPENAI API Key: {api_key}")
-# print("=" * 50)
+
+# display_main_divider()
 # print()
 # **************************************************
 
@@ -421,11 +545,7 @@ client = OpenAI(api_key=OPENAI_API_KEY)
 
 
 # **************************************************
-# def main() -> None:
-#     """
-#     Main of program.
-#     """
-
+# def main():
 #     print("Hello, World!")
 
 
@@ -436,7 +556,23 @@ client = OpenAI(api_key=OPENAI_API_KEY)
 
 # **************************************************
 # def main() -> None:
-#     """Main of program."""
+#     """Main function"""
+
+#     print("Hello, World!")
+
+
+# if __name__ == "__main__":
+#     main()
+# **************************************************
+
+
+# **************************************************
+# سلیقه من
+# **************************************************
+# def main() -> None:
+#     """
+#     Main function
+#     """
 
 #     print("Hello, World!")
 
@@ -448,19 +584,26 @@ client = OpenAI(api_key=OPENAI_API_KEY)
 
 # **************************************************
 # from rich import print
-# from dt_utility import clear_screen
+# from dt_utility import (
+#     clear_screen,
+#     display_main_divider,
+#     # NEW
+#     display_divider,
+#     display_error_message,
+# )
 
 
 # def main() -> None:
-#     """Main of program."""
+#     """
+#     Main function
+#     """
 
 #     clear_screen()
-#     print("=" * 50)
+#     display_main_divider()
 
-#     full_name: str = input("What is your full name: ")
-#     print(f"Hello, {full_name}!")
-
-#     print(1 / 0)  # Debug
+#     age_str: str = input("How old are you? ")
+#     age: int = int(age_str)
+#     print(f"You are {age} years old.")
 
 
 # if __name__ == "__main__":
@@ -472,11 +615,12 @@ client = OpenAI(api_key=OPENAI_API_KEY)
 #         print()
 
 #     except Exception as exception:
-#         print()
-#         print(f"[red][bold][-][/bold] {exception}![/red]")
+#         # NEW
+#         display_divider()
+#         display_error_message(message=str(exception))
 
 #     finally:
-#         print("=" * 50)
+#         display_main_divider()
 #         print()
 # **************************************************
 # **************************************************
@@ -488,11 +632,17 @@ client = OpenAI(api_key=OPENAI_API_KEY)
 # **************************************************
 # import os
 
+# from typing import (
+#     Final,
+#     Optional,
+# )
 # from rich import print
-# from typing import Final
-# from typing import Optional
+# from dt_utility import (
+#     clear_screen,
+#     display_main_divider,
+#     display_error_message,
+# )
 # from dotenv import load_dotenv
-# from dt_utility import clear_screen
 
 # KEY_NAME_OPENAI_API_KEY: Final[str] = "GOOGOOLI".replace(" ", "").upper()
 # # KEY_NAME_OPENAI_API_KEY: Final[str] = "OPENAI_API_KEY".replace(" ", "").upper()
@@ -500,7 +650,7 @@ client = OpenAI(api_key=OPENAI_API_KEY)
 
 # def get_key_value(key: str) -> str:
 #     """
-#     Get key value.
+#     Get key value
 #     """
 
 #     load_dotenv(override=True)
@@ -509,19 +659,19 @@ client = OpenAI(api_key=OPENAI_API_KEY)
 
 #     if not value:
 #         # NEW
-#         error_message: str = f"The key '{key}' not found or is empty"  # Remove '!'
-#         raise Exception(error_message)
+#         message: str = f"The key '{key}' not found or is empty"  # Remove '!'
+#         raise Exception(message)
 
 #     return value
 
 
 # def main() -> None:
 #     """
-#     Main of program.
+#     Main function
 #     """
 
 #     clear_screen()
-#     print("=" * 50)
+#     display_main_divider()
 
 #     api_key: str = get_key_value(
 #         key=KEY_NAME_OPENAI_API_KEY,
@@ -538,12 +688,10 @@ client = OpenAI(api_key=OPENAI_API_KEY)
 #         print()
 
 #     except Exception as exception:
-#         # NEW
-#         # print()
-#         print(f"[red][bold][-][/bold] {exception}![/red]")
+#         display_error_message(message=str(exception))
 
 #     finally:
-#         print("=" * 50)
+#         display_main_divider()
 #         print()
 # **************************************************
 
@@ -551,23 +699,31 @@ client = OpenAI(api_key=OPENAI_API_KEY)
 # **************************************************
 # Step (9)
 # **************************************************
+# """
+# Some Description
+# """
+
+# # NEW
 # import app_constants as constants
 
 # from rich import print
-# from typing import Final
-# from dt_utility import clear_screen
-# from dt_dotenv import get_key_value
+# from dt_utility import (
+#     clear_screen,
+#     display_main_divider,
+#     display_error_message,
+# )
 
-# VERSION: Final[str] = "1.0"
+# # NEW
+# from dt_dotenv import get_key_value
 
 
 # def main() -> None:
 #     """
-#     Main of program.
+#     Main function
 #     """
 
 #     clear_screen()
-#     print("=" * 50)
+#     display_main_divider()
 
 #     api_key: str = get_key_value(
 #         key=constants.KEY_NAME_OPENAI_API_KEY,
@@ -584,9 +740,9 @@ client = OpenAI(api_key=OPENAI_API_KEY)
 #         print()
 
 #     except Exception as exception:
-#         print(f"[red][bold][-][/bold] {exception}![/red]")
+#         display_error_message(message=str(exception))
 
 #     finally:
-#         print("=" * 50)
+#         display_main_divider()
 #         print()
 # **************************************************

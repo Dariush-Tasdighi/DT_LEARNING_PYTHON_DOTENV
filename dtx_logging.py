@@ -1,25 +1,25 @@
 """
-Dariush Tasdighi 'logging' Package Module
+Dariush Tasdighi Custom 'logging' Package Module
 """
 
 import logging
-import dt_utility
+import dt_utility as utility
 
 from typing import Final
 from rich.logging import RichHandler
 
-VERSION: Final[str] = "1.6"
+VERSION: Final[str] = "1.8.0"
 
 FILE_MODE: Final[str] = "at"
 FILE_ENCODING: Final[str] = "utf-8"
 DATE_FORMAT: Final[str] = "%Y-%m-%d %H:%M:%S"
 
 CONSOLE_FORMAT: Final[str] = (
-    "%(asctime)s,%(msecs)3d [%(filename)s:%(lineno) 3d] - %(message)s"
+    "%(asctime)s,%(msecs)03d [%(filename)s:%(lineno)04d] - %(message)s"
 )
 
 FILE_FORMAT: Final[str] = (
-    "[%(levelname)-8s] %(asctime)s,%(msecs)3d [%(filename)s:%(lineno) 3d] - %(message)s"
+    "[%(levelname)-8s] %(asctime)s,%(msecs)03d [%(filename)s:%(lineno)04d] - %(message)s"
 )
 
 
@@ -79,6 +79,6 @@ def setup_logging(
 
 
 if __name__ == "__main__":
-    dt_utility.display_just_one_error_message(
-        error_message=dt_utility.ERROR_MESSAGE_MODULE_IS_NOT_EXECUTED_DIRECTLY,
+    utility.display_just_one_error_message(
+        message=utility.ERROR_MESSAGE_MODULE_IS_NOT_EXECUTED_DIRECTLY,
     )
