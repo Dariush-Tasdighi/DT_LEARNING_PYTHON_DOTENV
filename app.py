@@ -1,10 +1,7 @@
 """
-Sample code for using 'dotenv' package.
+My Application
 """
 
-import app_constants as constants
-
-from rich import print
 from dt_utility import (
     clear_screen,
     display_main_divider,
@@ -19,17 +16,18 @@ from dtx_logging import setup_logging
 # from dt_dotenv import get_key_value
 from dtx_dotenv import get_key_value
 
+from rich import print
+from app_constants import KEY_NAME_OPENAI_API_KEY
+
 
 def main() -> None:
-    """
-    Main function
-    """
+    """Main function"""
 
     clear_screen()
     display_main_divider()
 
     api_key: str = get_key_value(
-        key=constants.KEY_NAME_OPENAI_API_KEY,
+        key=KEY_NAME_OPENAI_API_KEY,
     )
 
     print(f"OPENAI API Key: {api_key}")

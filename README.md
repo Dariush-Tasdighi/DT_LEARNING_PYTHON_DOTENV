@@ -1,4 +1,4 @@
-# Learning 'dotenv' Package
+# Learning 'python-dotenv' Package
 
 ## This program was developed by
 
@@ -28,10 +28,10 @@
 - **More:**
   - <https://rich.readthedocs.io/en/latest>
 
-### 'dotenv-python' package
+### 'python-dotenv' package
 
-- <https://pypi.org/project/dotenv-python>
-- <https://github.com/TsuiJie/dotenv-python>
+- <https://pypi.org/project/python-dotenv>
+- <https://github.com/theskumar/python-dotenv>
 
 ## Setup Environment
 
@@ -47,6 +47,8 @@
 ```
 
 ```bash
+# py install 3.13 -u
+
 # py -3.13 -m venv .venv.3.13
 # .\.venv.3.13\Scripts\activate
 
@@ -58,11 +60,26 @@
 ```
 
 ```bash
-py -3.14 -m venv .venv.3.14
-.\.venv.3.14\Scripts\activate
+# py install 3.14 -u
+
+# py -3.14 -m venv .venv.3.14
+# .\.venv.3.14\Scripts\activate
+
+# python -m pip list
+# python -m pip install -r .\requirements.3.14.txt -U
+# python -m pip list
+
+# deactivate
+```
+
+```bash
+py install 3.15 -u
+
+py -3.15 -m venv .venv.3.15
+.\.venv.3.15\Scripts\activate
 
 python -m pip list
-python -m pip install -r .\requirements.3.14.txt -U
+python -m pip install -r .\requirements.3.15.txt -U
 python -m pip list
 
 deactivate

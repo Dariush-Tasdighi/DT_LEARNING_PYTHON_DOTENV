@@ -1,26 +1,22 @@
 """
-Dariush Tasdighi Custom 'logging' Package Module
+Dariush Tasdighi - Custom 'logging' Package Module
 """
 
 import logging
-import dt_utility as utility
 
 from typing import Final
 from rich.logging import RichHandler
+from dt_utility import prevent_direct_execution
 
-VERSION: Final[str] = "1.8.0"
+VERSION: Final[str] = "1.8.2"
 
 FILE_MODE: Final[str] = "at"
 FILE_ENCODING: Final[str] = "utf-8"
 DATE_FORMAT: Final[str] = "%Y-%m-%d %H:%M:%S"
 
-CONSOLE_FORMAT: Final[str] = (
-    "%(asctime)s,%(msecs)03d [%(filename)s:%(lineno)04d] - %(message)s"
-)
+CONSOLE_FORMAT: Final[str] = "%(asctime)s,%(msecs)03d [%(filename)s:%(lineno)04d] - %(message)s"
 
-FILE_FORMAT: Final[str] = (
-    "[%(levelname)-8s] %(asctime)s,%(msecs)03d [%(filename)s:%(lineno)04d] - %(message)s"
-)
+FILE_FORMAT: Final[str] = "[%(levelname)-8s] %(asctime)s,%(msecs)03d [%(filename)s:%(lineno)04d] - %(message)s"
 
 
 def setup_logging(
@@ -28,9 +24,7 @@ def setup_logging(
     file_level=logging.WARNING,
     file_path: str = "./app.log",
 ) -> None:
-    """
-    Setup logging
-    """
+    """Setup logging"""
 
     root = logging.getLogger()
 
@@ -79,6 +73,4 @@ def setup_logging(
 
 
 if __name__ == "__main__":
-    utility.display_just_one_error_message(
-        message=utility.ERROR_MESSAGE_MODULE_IS_NOT_EXECUTED_DIRECTLY,
-    )
+    prevent_direct_execution()

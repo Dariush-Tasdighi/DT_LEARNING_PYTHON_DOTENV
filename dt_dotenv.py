@@ -1,17 +1,18 @@
 """
-Dariush Tasdighi Custom 'dotenv' Package Module
+Dariush Tasdighi - Custom 'dotenv' Package Module
 """
 
 import os
-import dt_utility as utility
 
 from typing import (
     Final,
     Optional,
 )
-from dotenv import load_dotenv
 
-VERSION: Final[str] = "1.5.4"
+from dotenv import load_dotenv
+from dt_utility import prevent_direct_execution
+
+VERSION: Final[str] = "1.5.5"
 
 
 def get_key_value(key: str) -> str:
@@ -29,6 +30,4 @@ def get_key_value(key: str) -> str:
 
 
 if __name__ == "__main__":
-    utility.display_just_one_error_message(
-        message=utility.ERROR_MESSAGE_MODULE_IS_NOT_EXECUTED_DIRECTLY,
-    )
+    prevent_direct_execution()
